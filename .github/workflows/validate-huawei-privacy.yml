@@ -1,0 +1,21 @@
+# Validates huawei.html only. Does not deploy GitHub Pages.
+# This repository publishes with the legacy Pages source branch main, path /.
+# A push to any other branch, including this workflow, does not publish the site.
+# Publication is a later push to main. There is no workflow_dispatch.
+
+name: validate-huawei-privacy
+
+on:
+  pull_request:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  html:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate huawei.html
+        run: python3 tests/test_huawei_privacy.py
