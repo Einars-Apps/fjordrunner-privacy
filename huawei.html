@@ -43,15 +43,18 @@ Kallenavn, mynter, figur, rekorder, daglig statistikk, annonsevalg (<code>fr_ad_
 Lokale påminnelser lages med enhetsalarmen. De går ikke til en server. Vi har ingen kopi av myntene dine. Avinstallering eller tømming av appdata sletter det lokale kallenavnet, myntene, annonsevalget og rekordene.
 </p>
 
-<h2 id="no-annonser">2. Huawei Ads, bare etter at du tillater det</h2>
+<h2 id="no-annonser">2. Huawei Ads, bare etter at du samtykker</h2>
 <p>
-Videoannonser kommer fra Huawei Ads SDK <code>com.huawei.hms:ads-lite:13.4.91.301</code>. SDK-en startes ikke når appen åpnes. Den startes først etter at du trykker <strong>Tillat</strong>, og først når spillet deretter ber om en annonse: «Fortsett (reklame)», slutt på en region, eller i modus Boostet også ved hvert tredje tapte løp. Standardmodus er Ren. Ren ber ikke om annonsen ved hvert tredje tapte løp. Du kan spille uten å tillate annonser.
+I Huawei-pakken som er ute nå, er Huawei Ads uttrykkelig ikke autorisert til å aktiveres, og annonser er ikke aktive. Beskrivelsen under gjelder bare dersom annonser senere er konfigurert og du har samtykket. Den beskriver ikke en ny utgave som allerede er aktiv.
 </p>
 <p>
-<strong>Ikke nå</strong> og <strong>Annonser: av</strong> i butikken stopper nye annonseforespørsler og lagrer valget bare på enheten. Allerede startet annonsekode i den samme kjøringen blir ikke slettet fra minnet før app-prosessen avsluttes. Neste oppstart starter ikke SDK-en på nytt før du tillater annonser igjen.
+På den konfigurerte stien er annonsene fullskjerms interstitial-annonser, som kan være bilde eller video, fra Huawei Ads SDK <code>com.huawei.hms:ads-lite:13.4.91.301</code>. SDK-en startes ikke bare fordi appen åpnes. Du kan samtykke ved å trykke <strong>Tillat</strong>, eller direkte med butikkens av/på-bryter ved å slå <strong>Annonser: på</strong>. Etter samtykke starter SDK-en ved første forsøk på å vise en annonse. Deretter kan den forhåndslaste når appen gjenopptas, når en annonse lukkes, når annonser slås på igjen, og når en annonse ikke er tilgjengelig. Senere visningsforsøk og disse forhåndslastingene kan sende nye forespørsler. Spillet ber om å vise en annonse ved «Fortsett (reklame)», ved slutten av en region, og i modus Boostet også ved hvert tredje tapte løp. Standardmodus er Ren. Ren ber ikke om visning ved hvert tredje tapte løp. Du kan spille uten å samtykke til annonser.
 </p>
 <p>
-Når annonser er tillatt, ber appen om ikke-tilpassede annonser (<code>ALLOW_NON_PERSONALIZED</code>). Det betyr at appen ikke tilbyr tilpassede annonser. Det betyr ikke at Huawei lar være å behandle opplysninger. Huawei beskriver selv hvilke opplysninger Ads SDK kan behandle når den kjører:
+<strong>Ikke nå</strong> og <strong>Annonser: av</strong> i butikken stopper nye annonseforespørsler og lagrer valget bare på enheten. <strong>Annonser: på</strong> gir samtykke direkte og kan føre til forhåndslasting. Allerede startet annonsekode i den samme kjøringen blir ikke slettet fra minnet før app-prosessen avsluttes. Neste oppstart starter ikke SDK-en før du samtykker igjen. Etter nytt samtykke kan første visningsforsøk starte SDK-en, og forhåndslasting kan følge.
+</p>
+<p>
+Dersom annonser er konfigurert og du har samtykket, ber appen om ikke-tilpassede annonser (<code>ALLOW_NON_PERSONALIZED</code>). Det betyr at appen ikke tilbyr tilpassede annonser. Det betyr ikke at Huawei lar være å behandle opplysninger. Huawei beskriver selv hvilke opplysninger Ads SDK kan behandle når den kjører:
 </p>
 <ul>
   <li><strong>Nødvendig for visning, svindelforebygging og attribusjon</strong>, til annonseformålet: OAID og ODID; grunnleggende appopplysninger, appinnstillinger og appbruk; operativsystem, nettverk, operatør og IP-adresse; maskinvare- og programvareparametere (enhetsmodell, maskinvare, skjermoppløsning, systeminnstillinger og enhetsbruk).</li>
@@ -82,7 +85,7 @@ Vi oppgir ikke et eget antall år eller et lagringsland for disse oppføringene.
 
 <h2 id="no-deling">4. Hva som deles</h2>
 <ul>
-  <li><strong>Huawei Ads</strong>, etter Tillat og et faktisk annonsekall: opplysningene i avsnitt 2.</li>
+  <li><strong>Huawei Ads</strong>, bare dersom annonser er konfigurert og du har samtykket, ved første visningsforsøk og ved senere forespørsler, inkludert forhåndslasting: opplysningene i avsnitt 2. Denne stien er ikke aktiv i Huawei-pakken som er ute nå.</li>
   <li><strong>Huawei IAP</strong>, når du åpner butikken, kjøper eller gjenoppretter: transaksjonsoppføringer.</li>
   <li><strong>Ikke delt i denne utgaven:</strong> kallenavn, lokal poengsum, mynter og annonsevalg. Ingen Firebase-trafikk.</li>
 </ul>
@@ -90,7 +93,7 @@ Vi oppgir ikke et eget antall år eller et lagringsland for disse oppføringene.
 
 <h2 id="no-trekk-tilbake">5. Slik trekker du tilbake eller sletter</h2>
 <ul>
-  <li>Trykk <strong>Ikke nå</strong>, eller <strong>Annonser: av</strong> i butikken, for å stoppe nye annonseforespørsler.</li>
+  <li>Trykk <strong>Ikke nå</strong>, eller <strong>Annonser: av</strong> i butikken, for å stoppe nye annonseforespørsler. <strong>Annonser: på</strong> gir samtykke direkte.</li>
   <li>Avinstaller appen eller tøm appdata for å slette lokalt kallenavn, mynter, rekorder og annonsevalg.</li>
   <li>Skriv til <a href="mailto:matsjekk@gmail.com">matsjekk@gmail.com</a> for innsyn eller sletting av det vi faktisk sitter på. I denne utgaven sitter vi ikke på en topplisteoppføring eller en kopi av betalingen.</li>
   <li>Huaweis egne erklæringer over forklarer hvordan du tar kontakt med Huawei om annonse- og betalingsdata de behandler.</li>
@@ -130,15 +133,18 @@ Nickname, coins, character, records, daily stats, the ad choice (<code>fr_ad_con
 Local reminders are created with the device alarm. They do not go to a server. We do not keep a copy of your coins. Uninstalling the app or clearing its data deletes the local nickname, coins, ad choice, and records.
 </p>
 
-<h2 id="en-ads">2. Huawei Ads, only after you allow them</h2>
+<h2 id="en-ads">2. Huawei Ads, only after you consent</h2>
 <p>
-Video ads come from Huawei Ads SDK <code>com.huawei.hms:ads-lite:13.4.91.301</code>. The SDK does not start when the app opens. It starts only after you tap <strong>Allow</strong>, and only when the game then asks for an ad: “Continue (ad)”, the end of a region, or, in Boosted mode, also every third failed run. The default mode is Clean. Clean does not ask for the every-third-failed-run ad. You can play without allowing ads.
+In the Huawei package that is released now, Huawei Ads are explicitly not authorized to activate, and ads are not active. The description below applies only if ads are later configured and you have consented. It does not describe a new release that is already active.
 </p>
 <p>
-<strong>Not now</strong> and <strong>Ads: off</strong> in the shop stop further ad requests and store that choice only on the device. Ad code already started in the same process is not removed from memory until the process ends. The next launch does not start the SDK again until you allow ads.
+On that configured path, the ads are full-screen interstitial ads, which can be an image or a video, from Huawei Ads SDK <code>com.huawei.hms:ads-lite:13.4.91.301</code>. The SDK does not start merely because the app opens. You can consent by tapping <strong>Allow</strong>, or directly with the shop Ads off/on control by turning <strong>Ads: on</strong>. After consent, the SDK starts on the first attempt to show an ad. It can then preload when the app resumes, when an ad is closed, when ads are toggled back on, and when an ad is unavailable. Later show attempts and those preloads can send further requests. The game asks to show an ad at “Continue (ad)”, at the end of a region, and, in Boosted mode, also every third failed run. The default mode is Clean. Clean does not ask for the every-third-failed-run show. You can play without consenting to ads.
 </p>
 <p>
-When ads are allowed, the app requests non-personalized ads (<code>ALLOW_NON_PERSONALIZED</code>). That means the app does not offer personalized ads. It does not mean Huawei processes no information. Huawei's own statement describes what the Ads SDK may process when it runs:
+<strong>Not now</strong> and <strong>Ads: off</strong> in the shop stop further ad requests and store that choice only on the device. <strong>Ads: on</strong> grants consent directly and can preload. Ad code already started in the same process is not removed from memory until the process ends. The next launch does not start the SDK until you consent again. After new consent, the first show attempt can start the SDK, and preload can follow.
+</p>
+<p>
+If ads are configured and you have consented, the app requests non-personalized ads (<code>ALLOW_NON_PERSONALIZED</code>). That means the app does not offer personalized ads. It does not mean Huawei processes no information. Huawei's own statement describes what the Ads SDK may process when it runs:
 </p>
 <ul>
   <li><strong>Necessary for display, fraud prevention, and attribution</strong>, for the advertising purpose: OAID and ODID; basic app information, app settings, and app usage; operating system, network, carrier, and IP address; hardware and software parameters (device model, hardware, screen resolution, system settings, and device usage).</li>
@@ -169,7 +175,7 @@ We do not state a number of years or a storage country for these records.
 
 <h2 id="en-disclosure">4. What is disclosed</h2>
 <ul>
-  <li><strong>Huawei Ads</strong>, after Allow and an actual ad request: the information in section 2.</li>
+  <li><strong>Huawei Ads</strong>, only if ads are configured and you have consented, on the first attempt to show an ad and on later requests, including preload: the information in section 2. This path is not active in the released Huawei package.</li>
   <li><strong>Huawei IAP</strong>, when you open the shop, buy, or restore: transaction records.</li>
   <li><strong>Not disclosed in this edition:</strong> nickname, local score, coins, and the ad choice. No Firebase traffic.</li>
 </ul>
@@ -177,7 +183,7 @@ We do not state a number of years or a storage country for these records.
 
 <h2 id="en-withdraw">5. How to withdraw or delete</h2>
 <ul>
-  <li>Tap <strong>Not now</strong>, or <strong>Ads: off</strong> in the shop, to stop further ad requests.</li>
+  <li>Tap <strong>Not now</strong>, or <strong>Ads: off</strong> in the shop, to stop further ad requests. <strong>Ads: on</strong> grants consent directly.</li>
   <li>Uninstall the app or clear its data to delete the local nickname, coins, records, and ad choice.</li>
   <li>Email <a href="mailto:matsjekk@gmail.com">matsjekk@gmail.com</a> for access to, or deletion of, what we actually hold. In this edition we do not hold a leaderboard entry or a copy of the payment.</li>
   <li>Huawei's statements linked above describe how to contact Huawei about advertising and payment data they process.</li>
